@@ -1,0 +1,26 @@
+{
+  "name": "express-vercel",
+  "version": "1.0.0",
+  "description": "Deploy express js to vercel.",
+  "main": "index.js",
+  "engines": {
+    "node" : "14.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hatuanem199801/express-vercel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hatuanem199801/express-vercel/issues"
+  },
+  "homepage": "https://github.com/hatuanem199801/express-vercel#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
