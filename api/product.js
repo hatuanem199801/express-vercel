@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const pkg = require("../package.json")
 
 /**
  * GET product list.
@@ -9,8 +10,8 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     res.json({
-      status: 200,
-      message: "Get data has successfully",
+      header: pkg.version + ":"+ new Date(),
+      message: ": A random inspirational quote: "
     });
   } catch (error) {
     console.error(error);

@@ -4,23 +4,25 @@
   "description": "Deploy express js to vercel.",
   "main": "index.js",
   "engines": {
-    "node" : "14.x"
+    "node": "16.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "kill": "ps ax | grep index.js | grep -v grep | awk '{print $1}' | xargs kill -9"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hatuanem199801/express-vercel.git"
+    "url": "git+https://github.com/rayjlim/express-vercel.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hatuanem199801/express-vercel/issues"
+    "url": "https://github.com/rayjlim/express-vercel/issues"
   },
-  "homepage": "https://github.com/hatuanem199801/express-vercel#readme",
+  "homepage": "https://github.com/rayjlim/express-vercel#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
