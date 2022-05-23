@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const mysqlConnection = require("../data/config");
+mysqlConnection = require("../data/config");
 
 
 
-
+//
 // router.get("/", async (req, res) => {
 //     try {
 //         res.json({
@@ -20,7 +20,7 @@ const mysqlConnection = require("../data/config");
 
 // GET all Employees
 
-// GET all Employees
+// // GET all Employees
 router.get('/', (req, res) => {
     mysqlConnection.query('SELECT * FROM employee', (err, rows, fields) => {
         if(!err) {

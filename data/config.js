@@ -2,9 +2,11 @@ const mysql = require('mysql');
 
 const mysqlConnection = mysql.createConnection({
     host: process.env.PLANETSCALE_DB_HOST,
-    user: process.env.PLANETSCALE_DB_USERNAME,
+    // user: process.env.PLANETSCALE_DB_USERNAME,
+    user: "nonono",
     password: process.env.PLANETSCALE_DB_PASSWORD,
     database: process.env.PLANETSCALE_DB,
+
      // multipleStatements: true
 });
 
