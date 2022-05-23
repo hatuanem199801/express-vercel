@@ -1,12 +1,11 @@
 const mysql = require('mysql');
 
 const mysqlConnection = mysql.createConnection({
-    host: 'ylr27dwm6q6a.us-east-1.psdb.cloud',
-    // host:'127.0.0.1:53918',
-    user: '4vm3cpaf3lir',
-    password: 'pscale_pw_ELYKgz0nkqWWYlA13fi34Ehhg7WpFlgoHCZMl9CZVDI',
-    database: 'proyectosterminales',
-     multipleStatements: true
+    host: process.env.PLANETSCALE_DB_HOST,
+    user: process.env.PLANETSCALE_DB_USERNAME,
+    password: process.env.PLANETSCALE_DB_PASSWORD,
+    database: process.env.PLANETSCALE_DB,
+     // multipleStatements: true
 });
 
 
