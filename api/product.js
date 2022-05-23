@@ -6,6 +6,7 @@ const router = express.Router();
  *
  * @return product list | empty.
  */
+
 router.get("/", async (req, res) => {
   try {
     res.json({
@@ -18,4 +19,5 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Display all users
 module.exports = router;

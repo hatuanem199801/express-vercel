@@ -4,7 +4,7 @@
   "description": "Deploy express js to vercel.",
   "main": "index.js",
   "engines": {
-    "node" : "14.x"
+    "node": "14.x"
   },
   "scripts": {
     "start": "node index.js"
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/hatuanem199801/express-vercel#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "planetscale-node": "^0.3.0"
   }
 }
