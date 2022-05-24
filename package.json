@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/hatuanem199801/express-vercel#readme",
   "dependencies": {
+    "@serverless-stack/resources": "^1.2.3",
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "serverless-mysql": "^1.5.4"

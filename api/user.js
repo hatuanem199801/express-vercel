@@ -3,6 +3,7 @@ const router = express.Router();
 mysqlConnection = require("../data/config");
 
 
+
 router.get("/", async (req, res) => {
     try {
         res.json({
