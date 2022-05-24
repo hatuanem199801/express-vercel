@@ -1,24 +1,22 @@
-const mysql = require('mysql');
-
-const mysqlConnection = mysql.createConnection({
-    host: process.env.PLANETSCALE_DB_HOST,
-    // user: process.env.PLANETSCALE_DB_USERNAME,
-    user: "nonono",
-    password: process.env.PLANETSCALE_DB_PASSWORD,
-    database: process.env.PLANETSCALE_DB,
-
-     // multipleStatements: true
-});
-
-
-mysqlConnection.connect(function (err) {
-    if (err) {
-        console.error(err);
-        return;
-    } else {
-        console.log('db is connected');
+const mysql = require("serverless-mysql")(
+ config = {
+    db: {
+        /* don't expose password or any sensitive info, done only for demo */
+        host: process.env.PLANETSCALE_DB_HOST,
+        user: process.env.PLANETSCALE_DB_USERNAME,
+        password: process.env.PLANETSCALE_DB_PASSWORD,
+        database: process.env.PLANETSCALE_DB,
+        ssl: {}
     }
-});
+})
 
-module.exports = mysqlConnection;
+exports.handler = async (event, context) => {
+    // Run your query
+    let results = await mysql.query('SELECT * FROM Usuario')
 
+    // Run clean up function
+    await mysql.end()
+
+    // Return the results
+    return results
+}
