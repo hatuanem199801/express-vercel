@@ -1,0 +1,53 @@
+{
+  "db": {
+    "client": "mysql",
+    "connection": {
+      "host": "localhost",
+      "user": "root",
+      "password": "password"
+    }
+  },
+  "routes": [{
+    "method": "get",
+    "endpoint": "/customer",
+    "query": "SELECT * FROM Users;"
+  },
+    {
+      "method": "post",
+      "endpoint": "/customer",
+      "query": [
+        [
+          "INSERT INTO customers (firstName, lastName, email) VALUES (?, ?, ?)",
+          "body.data.firstName",
+          "body.data.lastName",
+          "body.data.email"
+        ],
+        ["SELECT * FROM customers WHERE id=LAST_INSERT_ID()"]
+      ]
+    },
+    {
+      "method": "get",
+      "endpoint": "/customer/:customerId",
+      "query": ["SELECT * FROM customers WHERE id=?", "params.customerId"]
+    },
+    {
+      "method": "put",
+      "endpoint": "/customer/:customerId",
+      "query": [
+        [
+          "UPDATE customers SET firstName=?, lastName=?, email=? WHERE id=?",
+          "body.data.firstName",
+          "body.data.lastName",
+          "body.data.email",
+          "params.customerId"
+        ],
+        ["SELECT * FROM customers WHERE id=?", "params.customerId"]
+      ]
+    },
+    {
+      "method": "delete",
+      "endpoint": "/customer/:customerId",
+      "query": ["DELETE FROM customers WHERE id=?", "params.customerId"]
+    }
+  ]
+}
