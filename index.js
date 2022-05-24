@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const product = require("./api/product");
 const user = require("./api/user");
+const getUsers = require("./api/getUsers");
 
 
 
@@ -9,6 +10,9 @@ const user = require("./api/user");
 // app.use(express.json({extended: false}));
 app.use("/api/product", product);
 app.use("/api/user", user);
+app.use("/api/getUsers", getUsers);
+
+
 
 
 
