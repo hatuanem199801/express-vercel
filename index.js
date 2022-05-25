@@ -3,6 +3,7 @@ const app = express();
 const product = require("./api/product");
 const user = require("./api/user");
 const getUsers = require("./api/getUsers");
+const getModalidades = require("./api/getModalidades");
 
 
 
@@ -11,6 +12,7 @@ const getUsers = require("./api/getUsers");
 app.use("/api/product", product);
 app.use("/api/user", user);
 app.use("/api/getUsers", getUsers);
+app.use("/api/getModalidades", getModalidades);
 
 
 

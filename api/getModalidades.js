@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
     try {
         connection.connect();
 
-        connection.query('SELECT * from Usuario'  , function(err, rows, fields) {
+        connection.query('SELECT * from Modalidad'  , function(err, rows, fields) {
             if (err) throw err;
             console.log('The solution is: ', rows[0]);
             result =rows[0]
