@@ -5,7 +5,7 @@ router.get("/", async (req, res) => {
     try {
         res.json({
             status: 200,
-            message: "Get data has useers",
+            message: "Get data has dasddasdsad asdasuseers",
         });
     } catch (error) {
         console.error(error);

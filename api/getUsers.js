@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
         connection.query('SELECT * from Usuario'  , function(err, rows, fields) {
             if (err) throw err;
             console.log('The solution is: ', rows[0]);
-            result =rows[0]
+            result =rows
         });
 
         res.json({
