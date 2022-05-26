@@ -5,7 +5,7 @@ router.get("/", async (req, res) => {
     try {
         res.json({
             status: 200,
-            message: "Devolviendo datos de un solo usuario, Exito!!",
+            message: "Dasdsadasdsa  de un solo usuario, Exito!!",
         });
     } catch (error) {
         console.error(error);
