@@ -4,6 +4,7 @@ const product = require("./api/product");
 const user = require("./api/user");
 const getUsers = require("./api/getUsers");
 const getModalidades = require("./api/getModalidades");
+const getStatuses = require("./api/getStatuses");
 
 
 
@@ -13,6 +14,7 @@ app.use("/api/product", product);
 app.use("/api/user", user);
 app.use("/api/getUsers", getUsers);
 app.use("/api/getModalidades", getModalidades);
+app.use("/api/getStatuses", getStatuses);
 
 
 
