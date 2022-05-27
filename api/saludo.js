@@ -5,7 +5,7 @@ router.get("/", async (req, res) => {
   try {
     res.json({
       status: 200,
-      message: "Hi Welcome to this platfomre",
+      message: "Que ondita con el pandita",
     });
   } catch (error) {
     console.error(error);
