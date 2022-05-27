@@ -5,6 +5,7 @@ const user = require("./api/user");
 const getUsers = require("./api/getUsers");
 const getModalidades = require("./api/getModalidades");
 const getStatuses = require("./api/getStatuses");
+const saludo    = require("./api/saludo")
 
 
 
@@ -15,6 +16,7 @@ app.use("/api/user", user);
 app.use("/api/getUsers", getUsers);
 app.use("/api/getModalidades", getModalidades);
 app.use("/api/getStatuses", getStatuses);
+app.use("/api/saludar", saludo);
 
 
 
