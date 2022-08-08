@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+var cors = require('cors')
 
 router.get("/", async (req, res) => {
   try {

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+var cors = require('cors')
 connection = require("../db/conf");
 let result;
 

@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
+var cors = require('cors')
 connection = require("../db/conf");
 let result;
 
 router.get("/", async (req, res) => {
     try {
         connection.connect();
-
         connection.query('SELECT * from Registro'  , function(err, rows, fields) {
             if (err) throw err;
             console.log('The solution is: ', rows[0]);
