@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   try {
     res.json({
       status: 200,
-      message: "Que ondita con el pandita",
+      message: "server is awake!!!1",
     });
   } catch (error) {
     console.error(error);
