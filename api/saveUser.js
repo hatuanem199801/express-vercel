@@ -11,7 +11,13 @@ app.use(bodyParser.json());
 
 connection.connect();
 
+
 app.post('/', function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
     var nombre = req.body.nombre;
     var aPaterno = req.body.aPaterno;
     var aMaterno = req.body.aMaterno;
