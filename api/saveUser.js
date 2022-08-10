@@ -16,7 +16,9 @@ app.post('/', function (req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
         "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
+        "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Origin", "*",
+        "Access-Control-Allow-Methods", "*"
     );
     var nombre = req.body.nombre;
     var aPaterno = req.body.aPaterno;
