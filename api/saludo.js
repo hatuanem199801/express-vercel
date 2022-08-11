@@ -5,6 +5,13 @@ const app = express();
 app.use(cors())
 
 router.get("/", async (req, res) => {
+  
+   res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+
   try {
     res.json({
       status: 200,
