@@ -23,7 +23,7 @@ app.post('/', function (req, res, next) {
     var nip = "4545";
     var tipo = "1";
     var id = "155";
-    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email, nip, id_tipoUsuario)
+    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email, nip, tipoUsuario_id)
                    VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${email}", "${nip}", "${tipo}")`;
 
     try {

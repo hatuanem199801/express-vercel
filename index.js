@@ -8,6 +8,9 @@ const getStatuses = require("./api/getStatuses");
 const saludo    = require("./api/saludo")
 const reg    = require("./api/getRegistros")
 const saveUser    = require("./api/saveUser")
+const validateUser    = require("./api/validateUser")
+const deleteUser    = require("./api/deleteUser")
+const getUsertype    = require("./api/getUserType")
 
 
 // app.use(express.json({extended: false}));
@@ -19,6 +22,9 @@ app.use("/api/getStatuses", getStatuses);
 app.use("/api/saludar", saludo);
 app.use("/api/getRegistros", reg);
 app.use("/api/saveUser", saveUser);
+app.use("/api/validateUser", validateUser);
+app.use("/api/deleteUser", deleteUser);
+app.use("/api/getUserType", getUsertype);
 
 
 
