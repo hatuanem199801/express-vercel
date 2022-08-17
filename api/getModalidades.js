@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 var cors = require('cors')
-
+const app = express();
+app.use(cors())
 
 connection = require("../db/conf");
 let result;

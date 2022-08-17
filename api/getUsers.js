@@ -5,6 +5,7 @@ connection = require("../db/conf");
 let result;
 
 const app = express();
+app.use(cors())
 //const port = process.env.SERVER_PORT || 8000;
 
 // Add Access Control Allow Origin headers
