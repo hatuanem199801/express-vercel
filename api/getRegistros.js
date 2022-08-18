@@ -6,6 +6,7 @@ let result;
 
 router.get("/", async (req, res) => {
     try {
+
         connection.connect();
         connection.query('SELECT * from Registro'  , function(err, rows, fields) {
             if (err) throw err;
