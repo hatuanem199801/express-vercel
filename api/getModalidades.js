@@ -8,12 +8,19 @@ connection = require("../db/conf");
 let result;
 
 router.get("/", async (req, res) => {
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+
     try {
         connection.connect();
-        connection.query('SELECT * from Modalidad'  , function(err, rows, fields) {
+        connection.query('SELECT * from Modalidad', function (err, rows, fields) {
             if (err) throw err;
-            console.log('The solution is: ', rows[0]);
-            result =rows[0]
+            console.log('The solution is: ', rows);
+            result = rows
         });
 
         res.json({
