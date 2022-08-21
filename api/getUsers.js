@@ -24,16 +24,20 @@ router.get("/", async (req, res) => {
     try {
         connection.connect();
 
-        connection.query('SELECT * from Usuario'  , function(err, rows, fields) {
+        connection.query('SELECT * from Usuario', function (err, rows, fields) {
             if (err) throw err;
             console.log('The solution is: ', rows[0]);
-            result =rows
+            // result =rows
+            res.json({
+                status: 200,
+                message: rows,
+            });
         });
 
-        res.json({
+       /*  res.json({
             status: 200,
             message: result,
-        });
+        }); */
     } catch (error) {
         console.error(error);
         return res.status(500).send("users Server error");
