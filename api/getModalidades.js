@@ -20,13 +20,18 @@ router.get("/", async (req, res) => {
         connection.query('SELECT * from Modalidad', function (err, rows, fields) {
             if (err) throw err;
             console.log('The solution is: ', rows);
-            result = rows
+            // result = rows
+            res.json({
+                status: 200,
+                message: rows,
+            });
         });
 
-        res.json({
+        /* res.json({
             status: 200,
             message: result,
-        });
+        }); */
+
     } catch (error) {
         console.error(error);
         return res.status(500).send("users Server error");
