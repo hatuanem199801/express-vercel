@@ -11,6 +11,7 @@ const saveUser    = require("./api/saveUser")
 const validateUser    = require("./api/validateUser")
 const deleteUser    = require("./api/deleteUser")
 const getUsertype    = require("./api/getUserType")
+const getDocentes   = require("./api/getDocentes")
 
 
 // app.use(express.json({extended: false}));
@@ -25,6 +26,7 @@ app.use("/api/saveUser", saveUser);
 app.use("/api/validateUser", validateUser);
 app.use("/api/deleteUser", deleteUser);
 app.use("/api/getUserType", getUsertype);
+app.use("/api/getDocentes", getDocentes);
 
 
 
