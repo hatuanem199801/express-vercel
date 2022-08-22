@@ -8,6 +8,13 @@ connection = require("../db/conf");
 let result;
 
 router.get("/", async (req, res) => {
+    
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    
     try {
         connection.connect();
         connection.query('SELECT * from Usuario where tipoUsuario_id =2'  , function(err, rows, fields) {
