@@ -12,8 +12,8 @@ router.get("/", async (req, res) => {
         connection.connect();
         connection.query('SELECT * from Usuario where tipoUsuario_id =2'  , function(err, rows, fields) {
             if (err) throw err;
-            console.log('The solution is: ', rows[0]);
-            result =rows[0]
+            console.log('The solution is: ', rows);
+            result =rows
             res.json({
                 status: 200,
                 message: result,
