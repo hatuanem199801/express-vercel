@@ -14,12 +14,13 @@ router.get("/", async (req, res) => {
             if (err) throw err;
             console.log('The solution is: ', rows[0]);
             result =rows[0]
+            res.json({
+                status: 200,
+                message: result,
+            });
         });
 
-        res.json({
-            status: 200,
-            message: result,
-        });
+
     } catch (error) {
         console.error(error);
         return res.status(500).send("users Server error");
