@@ -20,11 +20,10 @@ app.post('/', function (req, res, next) {
     var aMaterno = req.body.aMaterno;
     var matricula = req.body.matricula;
     var email = req.body.email;
-    var nip = "4545";
-    var tipo = "1";
-    var id = "155";
-    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email, nip, tipoUsuario_id)
-                   VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${email}", "${nip}", "${tipo}")`;
+    var tipo = req.body.tipo;;
+
+    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email,  tipoUsuario_id)
+                   VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${email}",  "${tipo}")`;
 
     try {
         connection.query(sql, function (err, result) {
