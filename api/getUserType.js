@@ -39,7 +39,7 @@ router.get("/:mail", async (req, res) => {
             else
             {
                 res.json({
-                    status: 200,
+                    status: 400,
                     data:false,
                     message: "No se ha podido obtener el tipo",
                 });

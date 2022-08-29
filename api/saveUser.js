@@ -21,7 +21,6 @@ app.post('/', function (req, res, next) {
     var matricula = req.body.matricula;
     var email = req.body.email;
     var tipo = req.body.tipo;;
-
     var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email,  tipoUsuario_id)
                    VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${email}",  "${tipo}")`;
 
