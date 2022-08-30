@@ -21,29 +21,28 @@ router.get("/:mail", async (req, res) => {
     );
 
     let email = req.params.mail;
-    let query =`select Usuario.tipoUsuario_id, TipoUsuario.nombre, Usuario.nombre from Usuario,TipoUsuario where email = "${email}" and  Usuario.tipoUsuario_id = TipoUsuario.id `;
+    let query = `select Usuario.tipoUsuario_id, TipoUsuario.nombre, Usuario.nombre from Usuario,TipoUsuario where email = "${email}" and  Usuario.tipoUsuario_id = TipoUsuario.id `;
 
     try {
         connection.connect();
 
-        connection.query(query  , function(err, rows, fields) {
+        connection.query(query, function (err, rows, fields) {
             if (err) throw err;
-            result =rows
-            if(result!= undefined) {
+            result = rows
+            console.log(result);
+            if (result != '') {
                 res.json({
                     status: 200,
-                    data:result[0],
+                    data: result[0],
                     message: "Tipo de usuario encontrado"
                 });
             }
-            else
-            {
+            else {
                 res.json({
                     status: 400,
-                    data:false,
+                    data: false,
                     message: "No se ha podido obtener el tipo",
                 });
-
             }
 
         });
