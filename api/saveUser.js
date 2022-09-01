@@ -7,7 +7,7 @@ connection = require("../db/conf");
 let message;
 const app = express();
 app.use(cors())
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // app.use(bodyParser.raw());
 
@@ -20,9 +20,10 @@ app.post('/', function (req, res, next) {
     var aMaterno = req.body.aMaterno;
     var matricula = req.body.matricula;
     var email = req.body.email;
-    var tipo = req.body.tipo;;
-    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, email,  tipoUsuario_id)
-                   VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${email}",  "${tipo}")`;
+    var tipo = req.body.tipo;
+    const nip = '1999';
+    var sql = `INSERT INTO Usuario (nombre, a_paterno, a_materno, matricula, nip, email,  tipoUsuario_id)
+                   VALUES ("${nombre}", "${aPaterno}", "${aMaterno}", "${matricula}", "${nip}","${email}",  "${tipo}")`;
 
     try {
         connection.query(sql, function (err, result) {
@@ -36,9 +37,9 @@ app.post('/', function (req, res, next) {
         });
 
     } catch (error) {
-            console.error(error);
-            return res.status(500).send("Server error");
-        }
+        console.error(error);
+        return res.status(500).send("Server error");
+    }
 
 
 });
