@@ -21,7 +21,8 @@ router.get("/:mail", async (req, res) => {
     );
 
     let email = req.params.mail;
-    let query = `select Usuario.tipoUsuario_id, TipoUsuario.nombre, Usuario.nombre from Usuario,TipoUsuario where email = "${email}" and  Usuario.tipoUsuario_id = TipoUsuario.id `;
+    console.log(email);
+    let query = `SELECT Usuario.tipoUsuario_id, TipoUsuario.nombre AS nombreTipo, Usuario.nombre FROM Usuario, TipoUsuario WHERE email = "${email}" and  Usuario.tipoUsuario_id = TipoUsuario.id `;
 
     try {
         connection.connect();
